@@ -15,6 +15,8 @@ export class AppComponent {
     age: 18,
     image: 'https://d27jswm5an3efw.cloudfront.net/app/uploads/2019/07/insert-image-html.jpg',
   }
+  names: string[]= ['Oswaldo', 'Nicolas', 'Julio'];
+  newName = '';
 
   toogleButton() {
     this.btnDisabled = !this.btnDisabled;
@@ -32,5 +34,14 @@ export class AppComponent {
   changeName(event: Event){
     const element = event.target as HTMLInputElement;
     this.person.name = element.value;
+  }
+
+  addName(){
+    this.names.push(this.newName);
+    this.newName = '';
+  }
+
+  deleteName(index: number){
+    this.names.splice(index, 1);
   }
 }
