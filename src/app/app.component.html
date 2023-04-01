@@ -1,7 +1,27 @@
 <h1> ngSwitch </h1>
-<input type="text" #nameInput2="ngModel" required [(ngModel)]="person.name">
-<p class="message-error" [class.invalid]="nameInput2.invalid">El campo es requerido<p>
-
+<input type="text" #nameInput4="ngModel" required [(ngModel)]="person.name">
+<p class="message-error" [class.invalid]="nameInput4.invalid">El campo es requerido<p>
+<hr class="line-error"
+  [ngClass]="{
+    'valid': nameInput4.valid,
+    'invalid': nameInput4.invalid
+  }"
+/>
+<div class="styles">
+  <div>
+    <input type="number" [(ngModel)]="box.width">
+    <input type="number" [(ngModel)]="box.height">
+    <input type="color" [(ngModel)]="box.background">
+  </div>
+  <div>
+    <div [ngStyle]="{
+      'width.px': box.width,
+      'height.px': box.height,
+      'background-color': box.background,
+      'display': 'block'
+    }"></div>
+  </div>
+</div>
 <label for="">Nombre</label>
 <input type="text" #nameInput3="ngModel" required [(ngModel)]="person.name">
 <p [style.font-style]="nameInput3.invalid ? 'italic' : 'normal'">Texto texto texto<p>
@@ -14,6 +34,7 @@
   </div>
 </div>
 <hr/>
+
 <h1> ngSwitch </h1>
 <input type="text" required [(ngModel)]="person.name">
 <div [ngSwitch]="person.name">
