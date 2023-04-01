@@ -12,6 +12,11 @@ export class AppComponent {
   age = 18;
   image = "https://d27jswm5an3efw.cloudfront.net/app/uploads/2019/07/insert-image-html.jpg";
   btnDisabled = true;
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
   person = {
     name: 'Oswaldo',
     age: 18,
@@ -83,5 +88,9 @@ export class AppComponent {
 
   deleteName(index: number){
     this.names.splice(index, 1);
+  }
+
+  onRegister(){
+    console.log(this.register)
   }
 }

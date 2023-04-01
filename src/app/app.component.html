@@ -1,4 +1,27 @@
 <h1> ngSwitch </h1>
+<form (ngSubmit)="onRegister()" #myForm="ngForm">
+  <div class="input-group">
+    <label for="name">Nombre</label>
+    <input type="text" required id="name" name="name" [(ngModel)]="register.name">
+    <p>Mensajes de error</p>
+  </div>
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="text" required id="email" name="email" [(ngModel)]="register.email">
+    <p>Mensajes de error</p>
+  </div>
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input type="text" required id="password" name="password" [(ngModel)]="register.password">
+    <p>Mensajes de error</p>
+  </div>
+  <button [disabled]="myForm.invalid" type="submit">Registrar</button>
+  <button type="button">Action</button>
+</form>
+<hr/>
+
+
+<h1> ngSwitch </h1>
 <input type="text" #nameInput4="ngModel" required [(ngModel)]="person.name">
 <p class="message-error" [class.invalid]="nameInput4.invalid">El campo es requerido<p>
 <hr class="line-error"
